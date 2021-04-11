@@ -1,0 +1,11 @@
+<script type="text/javascript">
+//<![CDATA[    
+    Validation.add('validate-campaign-url', '<?php echo Mage::helper('customcatalog')->__('This url should consist of two words seperated by a slash. Example: campaign/summer-deal'); ?>', function(value){
+		var urlRegex = new RegExp('^[a-zA-Z-]+/[a-zA-Z-]+$');
+       	if (value.match(urlRegex) != null) { 
+            return true;
+        }
+        return false;
+    });	
+//]]> 
+</script>

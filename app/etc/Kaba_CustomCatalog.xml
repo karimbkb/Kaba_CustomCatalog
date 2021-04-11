@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Kaba_CustomCatalog>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Kaba_CustomCatalog>
+	</modules>
+</config>

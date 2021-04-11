@@ -1,0 +1,8 @@
+<?php $pageData = $this->getPageData(); ?>
+<?php $image = Mage::helper('customcatalog')->getImage($pageData->getBannerImageTop(), $pageData->getPageId()); ?>
+
+<div class="customcatalog">
+	<img src="<?php echo $this->escapeHtml($image); ?>" />
+	<h1><?php echo $this->escapeHtml($pageData->getHeadline()); ?></h1>
+	<p><?php echo $pageData->getText(); ?></p>
+</div>

@@ -1,0 +1,5 @@
+.columns .form-list td.value { width:600px }
+#attributes-select { width:200px; margin-right:10px }
+#operators-select { width:50px; margin-right:10px }
+#value-text { width:200px }
+#products_filter { margin-bottom:10px; }

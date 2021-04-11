@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<layout>
+	<adminhtml_page_index_edit>
+		<reference name="head">
+			<action method="addItem"><type>skin_css</type><name>customcatalog/css/customcatalog.css</name></action>
+		</reference>
+        <reference name="left">
+            <block type="customcatalog/adminhtml_page_index_edit_tabs" name="page_index_edit_tabs"></block>            
+        </reference>
+        <reference name="content">
+            <block type="customcatalog/adminhtml_page_index_edit" name="page_index_edit"></block>
+			<block type="adminhtml/template" name="pageproductsjs" template="customcatalog/pageproductsjs.phtml" />			
+			<block type="adminhtml/template" name="js" template="customcatalog/js.phtml" />	
+			<block type="adminhtml/template" name="js" template="customcatalog/pagejs.phtml" />				
+        </reference>
+    </adminhtml_page_index_edit>	
+	
+	<adminhtml_page_index_products>
+		<reference name="head">
+            <action method="setCanLoadExtJs"><flag>1</flag></action>
+            <action method="setCanLoadRulesJs"><flag>1</flag></action>			
+        </reference>
+        <block type="core/text_list" name="root" output="toHtml">
+			<block type="customcatalog/adminhtml_page_index_edit_tab_products_form" name="page_index_edit_tab_products_form" />			
+            <block type="customcatalog/adminhtml_page_index_edit_tab_products" name="page_index_edit_tab_products"/> 
+            <block type="adminhtml/widget_grid_serializer" name="page_products_grid_serializer">
+                <reference name="page_products_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>page_index_edit_tab_products</grid_block_name>
+                        <data_callback>getProductIds</data_callback> 
+                        <hidden_input_name>page[products]</hidden_input_name>
+                        <reload_param_name>page_products</reload_param_name>
+                    </action>
+                </reference>
+            </block>	
+			<block type="adminhtml/template" name="js" template="customcatalog/js.phtml" />	
+        </block>
+    </adminhtml_page_index_products>
+	
+	<adminhtml_page_index_productsgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="customcatalog/adminhtml_page_index_edit_tab_products" name="page_index_edit_tab_products"/>
+        </block>
+    </adminhtml_page_index_productsgrid>
+	
+	<adminhtml_page_index_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="customcatalog/adminhtml_page_index_grid" name="admin.page.grid"/>
+        </block>
+    </adminhtml_page_index_grid>
+			
+</layout>

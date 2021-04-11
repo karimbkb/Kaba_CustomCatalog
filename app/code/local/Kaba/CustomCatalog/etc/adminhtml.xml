@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<acl>
+		<resources>
+			<admin>
+				<children>
+					<customcatalog translate="title" module="customcatalog">
+                        <title>CustomCatalog</title>
+                        <sort_order>30</sort_order>
+                        <children>                            
+                            <page translate="title">
+                                <title>Manage Pages</title>
+                            </page>                            
+                        </children>
+                    </customcatalog>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+	<menu>
+        <customcatalog translate="title" module="customcatalog">
+            <title>Custom Catalog</title>
+            <sort_order>150</sort_order>
+            <children>
+                <page translate="title" module="customcatalog">
+                    <title>Manage Pages</title>
+                    <sort_order>1</sort_order>
+                    <action>adminhtml/page_index</action>
+                </page>
+            </children>
+        </customcatalog>
+    </menu>
+</config>

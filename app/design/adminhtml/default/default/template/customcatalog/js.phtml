@@ -1,0 +1,20 @@
+<script type="text/javascript">
+//<![CDATA[
+function evalSelectBox() {
+	 if ($('products_product_collection_type').value == 'sku') { // Show Sku
+		 $('products_filter').up('tr').hide();
+
+		 $('products_skus').up('tr').show();
+		 $('products_save_button').up('tr').show();
+		 $('productsGrid').show();
+	 } else { // show filters
+		 $('products_skus').up('tr').hide();
+		 $('products_save_button').up('tr').hide();
+		 $('productsGrid').hide();
+
+		 $('products_filter').up('tr').show();
+	 }
+}
+evalSelectBox();
+
+</script>
